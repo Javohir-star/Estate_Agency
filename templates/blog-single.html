@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Blog Single | UchastkaBor{% endblock %}
+
+{% block content %}
+
+<section class="intro-single">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-lg-8">
+        <div class="title-single-box">
+          <h1 class="title-single">Book Cover Design</h1>
+          <span class="color-text-a">News Single</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="news-single nav-arrow-b">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="news-img-box">
+          <img src="{% static 'img/slide-3.jpg' %}" class="img-fluid">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+
+        <div class="post-information">
+          <ul class="list-inline text-center color-a">
+            <li class="list-inline-item mr-2">
+              <strong>Author:</strong>
+              <span class="color-text-a">Morgan Jimenez</span>
+            </li>
+            <li class="list-inline-item mr-2">
+              <strong>Category:</strong>
+              <span class="color-text-a">Travel</span>
+            </li>
+            <li class="list-inline-item">
+              <strong>Date:</strong>
+              <span class="color-text-a">19 Apr. 2017</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="post-content color-text-a">
+          <p class="post-intro">
+            Sed porttitor lectus nibh. Lorem ipsum dolor sit amet,
+            <strong>adipiscing</strong> elit.
+          </p>
+
+          <p>
+            Proin eget tortor risus. Donec sollicitudin molestie malesuada.
+            Cras ultricies ligula sed magna dictum porta.
+          </p>
+
+          <blockquote class="blockquote">
+            <p class="mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <footer class="blockquote-footer">
+              <strong>Albert Vargas</strong>
+            </footer>
+          </blockquote>
+
+          <p>
+            Donec rutrum congue leo eget malesuada. Curabitur aliquet quam id
+            dui posuere blandit.
+          </p>
+        </div>
+
+        <div class="post-footer">
+          <div class="post-share">
+            <span>Share:</span>
+            <ul class="list-inline socials">
+              <li class="list-inline-item">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#"><i class="fa fa-instagram"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock content %}
