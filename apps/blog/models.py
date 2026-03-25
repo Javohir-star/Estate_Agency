@@ -82,7 +82,7 @@ class Country(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 
 class Region(models.Model):
     name = models.CharField(max_length=255, verbose_name="Region Name")
@@ -98,7 +98,7 @@ class Region(models.Model):
 
     def __str__(self):
         return self.name
-    
+
 
 class Course(models.Model):
     name = models.CharField(max_length=255, verbose_name="Course Name")

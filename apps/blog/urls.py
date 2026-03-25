@@ -1,7 +1,19 @@
 from django.urls import path
 
-from apps.blog.views import BlogListView, BlogSingleView, CountryListView, RegionListView, CourseListView
-from apps.blog.apis.views import BlogPostListAPIView, BlogPostDetailAPIView, CountryPostListAPIView, RegionPostListAPIView, CoursesPostListAPIView
+from apps.blog.views import (
+    BlogListView,
+    BlogSingleView,
+    CountryListView,
+    RegionListView,
+    CourseListView,
+)
+from apps.blog.apis.views import (
+    BlogPostListAPIView,
+    BlogPostDetailAPIView,
+    CountryPostListAPIView,
+    RegionPostListAPIView,
+    CoursesPostListAPIView,
+)
 
 
 urlpatterns = [
@@ -9,7 +21,6 @@ urlpatterns = [
     path("posts/<slug:slug>/", BlogSingleView.as_view(), name="blog-single"),
     path("api/posts/", BlogPostListAPIView.as_view(), name="api-blogs"),
     path("api/post/<int:pk>/", BlogPostDetailAPIView.as_view(), name="api-blog-single"),
-
     path("countries/", CountryListView.as_view(), name="countries"),
     path("regions/", RegionListView.as_view(), name="regions"),
     path("courses/", CourseListView.as_view(), name="courses"),
