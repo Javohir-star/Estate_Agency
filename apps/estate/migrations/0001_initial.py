@@ -6,108 +6,307 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('common', '0001_initial'),
+        ("common", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Amenities',
+            name="Amenities",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('name', models.CharField(max_length=255, verbose_name='Amenity Name')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                ("name", models.CharField(max_length=255, verbose_name="Amenity Name")),
             ],
             options={
-                'verbose_name': 'Amenity',
-                'verbose_name_plural': 'Amenities',
+                "verbose_name": "Amenity",
+                "verbose_name_plural": "Amenities",
             },
         ),
         migrations.CreateModel(
-            name='EstateAgentComment',
+            name="EstateAgentComment",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('name', models.CharField(max_length=255, verbose_name='Name')),
-                ('email', models.EmailField(max_length=254, verbose_name='Email')),
-                ('comment', models.TextField(verbose_name='Comment')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                ("name", models.CharField(max_length=255, verbose_name="Name")),
+                ("email", models.EmailField(max_length=254, verbose_name="Email")),
+                ("comment", models.TextField(verbose_name="Comment")),
             ],
             options={
-                'verbose_name': 'Estate Agent Comment',
-                'verbose_name_plural': 'Estate Agent Comments',
+                "verbose_name": "Estate Agent Comment",
+                "verbose_name_plural": "Estate Agent Comments",
             },
         ),
         migrations.CreateModel(
-            name='EstateCategory',
+            name="EstateCategory",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('name', models.CharField(max_length=255, verbose_name='Estate Category Name')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "name",
+                    models.CharField(
+                        max_length=255, verbose_name="Estate Category Name"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Estate Category',
-                'verbose_name_plural': 'Estate Categories',
+                "verbose_name": "Estate Category",
+                "verbose_name_plural": "Estate Categories",
             },
         ),
         migrations.CreateModel(
-            name='EstateAgent',
+            name="EstateAgent",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('first_name', models.CharField(max_length=255, verbose_name='First Name')),
-                ('last_name', models.CharField(max_length=255, verbose_name='Last Name')),
-                ('bio', models.TextField(blank=True, null=True, verbose_name='Bio')),
-                ('phone', models.CharField(max_length=255, verbose_name='Phone')),
-                ('mobile', models.CharField(blank=True, max_length=255, null=True, verbose_name='Mobile')),
-                ('email', models.EmailField(max_length=254, verbose_name='Email')),
-                ('telegram', models.CharField(blank=True, max_length=255, null=True, verbose_name='Telegram')),
-                ('whatsapp', models.CharField(blank=True, max_length=255, null=True, verbose_name='WhatsApp')),
-                ('instagram', models.CharField(blank=True, max_length=255, null=True, verbose_name='Instagram')),
-                ('facebook', models.CharField(blank=True, max_length=255, null=True, verbose_name='Facebook')),
-                ('x', models.CharField(blank=True, max_length=255, null=True, verbose_name='X')),
-                ('avatar', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.RESTRICT, to='common.media', verbose_name='Avatar')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "first_name",
+                    models.CharField(max_length=255, verbose_name="First Name"),
+                ),
+                (
+                    "last_name",
+                    models.CharField(max_length=255, verbose_name="Last Name"),
+                ),
+                ("bio", models.TextField(blank=True, null=True, verbose_name="Bio")),
+                ("phone", models.CharField(max_length=255, verbose_name="Phone")),
+                (
+                    "mobile",
+                    models.CharField(
+                        blank=True, max_length=255, null=True, verbose_name="Mobile"
+                    ),
+                ),
+                ("email", models.EmailField(max_length=254, verbose_name="Email")),
+                (
+                    "telegram",
+                    models.CharField(
+                        blank=True, max_length=255, null=True, verbose_name="Telegram"
+                    ),
+                ),
+                (
+                    "whatsapp",
+                    models.CharField(
+                        blank=True, max_length=255, null=True, verbose_name="WhatsApp"
+                    ),
+                ),
+                (
+                    "instagram",
+                    models.CharField(
+                        blank=True, max_length=255, null=True, verbose_name="Instagram"
+                    ),
+                ),
+                (
+                    "facebook",
+                    models.CharField(
+                        blank=True, max_length=255, null=True, verbose_name="Facebook"
+                    ),
+                ),
+                (
+                    "x",
+                    models.CharField(
+                        blank=True, max_length=255, null=True, verbose_name="X"
+                    ),
+                ),
+                (
+                    "avatar",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.RESTRICT,
+                        to="common.media",
+                        verbose_name="Avatar",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Estate Agent',
-                'verbose_name_plural': 'Estate Agents',
+                "verbose_name": "Estate Agent",
+                "verbose_name_plural": "Estate Agents",
             },
         ),
         migrations.CreateModel(
-            name='Estate',
+            name="Estate",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('name', models.CharField(max_length=255, verbose_name='Estate Name')),
-                ('address', models.CharField(max_length=255, verbose_name='Address')),
-                ('latitude', models.DecimalField(decimal_places=6, max_digits=9, verbose_name='Latitude')),
-                ('longitude', models.DecimalField(decimal_places=6, max_digits=9, verbose_name='Longitude')),
-                ('status', models.CharField(choices=[('sale', 'For Sale'), ('sold', 'Sold'), ('rent', 'For Rent'), ('unavailable', 'Unavailable')], max_length=255, verbose_name='Status')),
-                ('area', models.DecimalField(decimal_places=2, max_digits=6, verbose_name='Area (m^2)')),
-                ('beds', models.IntegerField(validators=[django.core.validators.MaxValueValidator(10), django.core.validators.MinValueValidator(0)], verbose_name='Beds')),
-                ('baths', models.IntegerField(validators=[django.core.validators.MaxValueValidator(10), django.core.validators.MinValueValidator(0)], verbose_name='Baths')),
-                ('garage', models.IntegerField(validators=[django.core.validators.MaxValueValidator(10), django.core.validators.MinValueValidator(0)], verbose_name='Garage')),
-                ('price', models.DecimalField(decimal_places=2, max_digits=10, verbose_name='Price')),
-                ('description', models.TextField(blank=True, null=True, verbose_name='Description')),
-                ('video', models.URLField(blank=True, null=True, verbose_name='Video')),
-                ('amenities', models.ManyToManyField(related_name='estates', to='estate.amenities', verbose_name='Amenities')),
-                ('currency', models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, related_name='estates', to='common.currency')),
-                ('images', models.ManyToManyField(related_name='estates', to='common.media', verbose_name='Images')),
-                ('region', models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, related_name='estates', to='common.region')),
-                ('state', models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, related_name='estates', to='common.state')),
-                ('agent', models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, related_name='estates', to='estate.estateagent', verbose_name='Estate Agent')),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, related_name='estates', to='estate.estatecategory')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                ("name", models.CharField(max_length=255, verbose_name="Estate Name")),
+                ("address", models.CharField(max_length=255, verbose_name="Address")),
+                (
+                    "latitude",
+                    models.DecimalField(
+                        decimal_places=6, max_digits=9, verbose_name="Latitude"
+                    ),
+                ),
+                (
+                    "longitude",
+                    models.DecimalField(
+                        decimal_places=6, max_digits=9, verbose_name="Longitude"
+                    ),
+                ),
+                (
+                    "status",
+                    models.CharField(
+                        choices=[
+                            ("sale", "For Sale"),
+                            ("sold", "Sold"),
+                            ("rent", "For Rent"),
+                            ("unavailable", "Unavailable"),
+                        ],
+                        max_length=255,
+                        verbose_name="Status",
+                    ),
+                ),
+                (
+                    "area",
+                    models.DecimalField(
+                        decimal_places=2, max_digits=6, verbose_name="Area (m^2)"
+                    ),
+                ),
+                (
+                    "beds",
+                    models.IntegerField(
+                        validators=[
+                            django.core.validators.MaxValueValidator(10),
+                            django.core.validators.MinValueValidator(0),
+                        ],
+                        verbose_name="Beds",
+                    ),
+                ),
+                (
+                    "baths",
+                    models.IntegerField(
+                        validators=[
+                            django.core.validators.MaxValueValidator(10),
+                            django.core.validators.MinValueValidator(0),
+                        ],
+                        verbose_name="Baths",
+                    ),
+                ),
+                (
+                    "garage",
+                    models.IntegerField(
+                        validators=[
+                            django.core.validators.MaxValueValidator(10),
+                            django.core.validators.MinValueValidator(0),
+                        ],
+                        verbose_name="Garage",
+                    ),
+                ),
+                (
+                    "price",
+                    models.DecimalField(
+                        decimal_places=2, max_digits=10, verbose_name="Price"
+                    ),
+                ),
+                (
+                    "description",
+                    models.TextField(blank=True, null=True, verbose_name="Description"),
+                ),
+                ("video", models.URLField(blank=True, null=True, verbose_name="Video")),
+                (
+                    "amenities",
+                    models.ManyToManyField(
+                        related_name="estates",
+                        to="estate.amenities",
+                        verbose_name="Amenities",
+                    ),
+                ),
+                (
+                    "currency",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.RESTRICT,
+                        related_name="estates",
+                        to="common.currency",
+                    ),
+                ),
+                (
+                    "images",
+                    models.ManyToManyField(
+                        related_name="estates", to="common.media", verbose_name="Images"
+                    ),
+                ),
+                (
+                    "region",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.RESTRICT,
+                        related_name="estates",
+                        to="common.region",
+                    ),
+                ),
+                (
+                    "state",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.RESTRICT,
+                        related_name="estates",
+                        to="common.state",
+                    ),
+                ),
+                (
+                    "agent",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.RESTRICT,
+                        related_name="estates",
+                        to="estate.estateagent",
+                        verbose_name="Estate Agent",
+                    ),
+                ),
+                (
+                    "category",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.RESTRICT,
+                        related_name="estates",
+                        to="estate.estatecategory",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Estate',
-                'verbose_name_plural': 'Estates',
+                "verbose_name": "Estate",
+                "verbose_name_plural": "Estates",
             },
         ),
     ]

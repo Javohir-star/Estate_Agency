@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Courses{% endblock %}
+
+{% block content %}
+
+<section class="intro-single">
+  <div class="container">
+    <h1 class="title-single">Courses</h1>
+  </div>
+</section>
+
+<section class="news-grid grid">
+  <div class="container">
+    <div class="row">
+
+      {% for course in courses %}
+      <div class="col-md-4">
+        <div class="card-box-b card-shadow">
+
+          <div class="img-box-b">
+            <img src="{{ course.image.url }}" class="img-b img-fluid">
+          </div>
+
+          <div class="card-overlay">
+            <div class="card-header-b">
+
+              <div class="card-title-b">
+                <h2 class="title-2">
+                  <a href="{% url 'course-single' course.slug %}">
+                    {{ course.title }}
+                  </a>
+                </h2>
+              </div>
+
+              <div class="card-date">
+                <span class="date-b">{{ course.price }} $</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

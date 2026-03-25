@@ -1,6 +1,12 @@
 from django.contrib import admin
 
-from apps.estate.models import Amenities, Estate, EstateAgent, EstateAgentComment, EstateCategory
+from apps.estate.models import (
+    Amenities,
+    Estate,
+    EstateAgent,
+    EstateAgentComment,
+    EstateCategory,
+)
 
 
 @admin.register(EstateAgent)

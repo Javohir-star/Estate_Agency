@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Countries{% endblock %}
+
+{% block content %}
+
+<section class="intro-single">
+  <div class="container">
+    <div class="title-single-box">
+      <h1 class="title-single">Countries</h1>
+    </div>
+  </div>
+</section>
+
+<section class="news-grid grid">
+  <div class="container">
+    <div class="row">
+
+      {% for country in countries %}
+      <div class="col-md-4">
+        <div class="card-box-b card-shadow">
+
+          <div class="img-box-b">
+            <img src="{{ country.image.url }}" class="img-b img-fluid">
+          </div>
+
+          <div class="card-overlay">
+            <div class="card-header-b">
+
+              <div class="card-title-b">
+                <h2 class="title-2">
+                  <a href="{% url 'country-single' country.slug %}">
+                    {{ country.name }}
+                  </a>
+                </h2>
+              </div>
+
+              <div class="card-date">
+                <span class="date-b">{{ country.created_at }}</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

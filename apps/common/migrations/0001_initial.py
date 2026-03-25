@@ -6,70 +6,131 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Currency',
+            name="Currency",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, verbose_name='Currency Name')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(max_length=255, verbose_name="Currency Name"),
+                ),
             ],
             options={
-                'verbose_name': 'Currency',
-                'verbose_name_plural': 'Currencies',
+                "verbose_name": "Currency",
+                "verbose_name_plural": "Currencies",
             },
         ),
         migrations.CreateModel(
-            name='Media',
+            name="Media",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('file', models.FileField(upload_to=apps.common.models.media_upload_to, verbose_name='Media')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "file",
+                    models.FileField(
+                        upload_to=apps.common.models.media_upload_to,
+                        verbose_name="Media",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Media',
-                'verbose_name_plural': 'Media',
+                "verbose_name": "Media",
+                "verbose_name_plural": "Media",
             },
         ),
         migrations.CreateModel(
-            name='State',
+            name="State",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, verbose_name='State Name')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255, verbose_name="State Name")),
             ],
             options={
-                'verbose_name': 'State',
-                'verbose_name_plural': 'States',
+                "verbose_name": "State",
+                "verbose_name_plural": "States",
             },
         ),
         migrations.CreateModel(
-            name='Service',
+            name="Service",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, verbose_name='Service Name')),
-                ('icon', models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, to='common.media', verbose_name='Icon')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255, verbose_name="Service Name")),
+                (
+                    "icon",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.RESTRICT,
+                        to="common.media",
+                        verbose_name="Icon",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Service',
-                'verbose_name_plural': 'Services',
+                "verbose_name": "Service",
+                "verbose_name_plural": "Services",
             },
         ),
         migrations.CreateModel(
-            name='Region',
+            name="Region",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, verbose_name='Region Name')),
-                ('state', models.ForeignKey(on_delete=django.db.models.deletion.RESTRICT, related_name='regions', to='common.state')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255, verbose_name="Region Name")),
+                (
+                    "state",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.RESTRICT,
+                        related_name="regions",
+                        to="common.state",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Region',
-                'verbose_name_plural': 'Regions',
+                "verbose_name": "Region",
+                "verbose_name_plural": "Regions",
             },
         ),
     ]

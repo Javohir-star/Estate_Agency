@@ -9,7 +9,7 @@ from apps.estate.views import (
     BlogSingleView,
     AgentListView,
     AgentSingleView,
-    ContactView
+    ContactView,
 )
 
 
